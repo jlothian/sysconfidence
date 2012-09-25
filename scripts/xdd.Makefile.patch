@@ -1,0 +1,11 @@
+--- xdd/Makefile.orig	2012-03-05 11:20:39.939420000 -0500
++++ xdd/Makefile	2012-03-05 11:20:19.944431000 -0500
+@@ -339,3 +339,8 @@
+ # Make meta-directives
+ #
+ .PHONY: all doc fastinstall install tarball
++
++print_includes:
++	@echo $(INCLUDES)
++print_cppflags:
++	@echo $(CPPFLAGS)

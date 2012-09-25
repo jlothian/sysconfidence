@@ -1,0 +1,20 @@
+Installing SystemConfidence
+
+To configure the low-latency timers in ORB, run:
+
+scripts/config.sh <target>
+
+Where <target> is one of:
+    x86cluster -- generic x86-64
+    crayxt     -- Cray XT      
+    ibmbgp     -- IBM BG/P    
+    sicortex   -- SiCortex   
+    power7     -- IBM Power7
+
+Create or copy a make.inc from the 'examples' subdirectory to set up
+appropriate make variables. 'make.inc.generic' is a good starting
+point. Then simply:
+
+make
+
+This will produce a 'sysconfidence' executable.

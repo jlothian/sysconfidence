@@ -1,0 +1,7 @@
+config.h
+xdd_main.c
+*.o
+*.a
+.*.swp
+read_xdd
+sysconfidence

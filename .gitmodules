@@ -1,0 +1,3 @@
+[submodule "xdd"]
+	path = xdd
+	url = /ccs/proj/csc040/var/git/xdd.git

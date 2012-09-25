@@ -1,0 +1,16 @@
+# Confidence Makefile
+#
+
+# Enable SHMEM
+SHMEM      = -DSHMEM
+
+MPI_LIBS   = -lmpi
+SHMEM_LIBS = -lsma
+
+# compiler and flags
+CC         = gcc 
+CFLAGS     = -m64 -g -Wall $(SHMEM)
+
+# libraries
+LIBFLAGS   = $(MPI_LIBS) $(SHMEM_LIBS)
+LIBS	   = -lpthread -lrt -lm

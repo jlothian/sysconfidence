@@ -1,0 +1,45 @@
+#!/bin/bash
+#  This file is part of SystemBurn.
+#
+#  Copyright (C) 2012, UT-Battelle, LLC.
+#
+#  This product includes software produced by UT-Battelle, LLC under Contract No. 
+#  DE-AC05-00OR22725 with the Department of Energy. 
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the New BSD 3-clause software license (LICENSE). 
+#  
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the 
+#  LICENSE for more details.
+#
+#  For more information please contact the SystemBurn developers at: 
+#  systemburn-info@googlegroups.com
+
+
+if [ -f sysconfidence.tar.gz ]
+then
+	mv sysconfidence.tar.gz sysconfidence.tar.gz.old
+fi
+
+export DATED=$(date +"%Y%m%d")
+export DATE=$(date +"%Y.%m.%d")
+
+mkdir sysconfidence.${DATED}
+mkdir sysconfidence.${DATED}/scripts
+mkdir sysconfidence.${DATED}/xdd
+
+#sed -e"s/^ \* Version: .*$/ * Version: ${DATE}/" < COPYRIGHT > tmpfile.$$
+
+FILES="LICENSING.pdf Makefile Makefile.CrayXT Makefile.bazooka Makefile.pod7 Makefile.rhel6.ppc Makefile.rhel6.x86_64 README TODO bit_test.c build.sh comm.c comm.h config.h copyright.h hostfile.bazooka hostfile.stride io_test.c measurement.c measurement.h net_test.c options.c options.h orbtimer.c orbtimer.h read_xdd_dump.c regression.bash scripts sysconfidence-mpi sysconfidence-shmem sysconfidence.c tests.h types.h xdd xdd_main.h scripts/build_release scripts/build_xdd.sh scripts/config.sh scripts/get-xdd-source.sh"
+for file in $FILES
+do
+	#cat tmpfile.$$ $file > sysconfidence.${DATED}/$file
+	cat $file > sysconfidence.${DATED}/$file
+done
+
+tar -czvf sysconfidence.${DATED}.tar.gz sysconfidence.${DATED}
+
+rm -rf sysconfidence.${DATED}
+

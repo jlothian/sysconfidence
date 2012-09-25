@@ -1,0 +1,5 @@
+
+* Use GNU autotools for ./configure and Makefile
+
+* Implement a modular plan library, similar to SystemBurn.  However, it should be as simple as possible to add/remove modules.  Each module should have its own error list and report its own name.  Then modules should be listed in a single array of struct/function pointers.  This would allow the user (or autotools) to configure which modules to include at compile time by changing the entries of a single pointer list.
+
