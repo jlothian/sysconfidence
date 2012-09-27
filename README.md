@@ -123,7 +123,8 @@ A: The output files contain three different representations of
 
 Q: Within an output file, what are the columns?
 
-A: - #bin --    The bin number in the histogram.
+A: 
+   - #bin --    The bin number in the histogram.
    (us) to (us) -- The min and max latency representing the edges
                    of this bin.
    - timer --   the number of occurances or CDF/PDF value for the timer.
