@@ -34,6 +34,7 @@ For tips on running see the regression.bash script.
 Latency Test FAQs:
 
 Q: How do I run a simple small message latency test?
+
 A: To test the network latency for small (8byte) payloads on the
    network, have systemconfidence walk through the schedule of each
    possible pair of processors ten times (cycles), having each pair
@@ -43,6 +44,7 @@ A: To test the network latency for small (8byte) payloads on the
 
 
 Q: Should SystemConfidence be run with one task per node or several tasks per node?
+
 A: You should test each of possibilities you might expect to run
    in a production job, since one would expect the latency to vary
    depending on how many tasks are contending for access to the
@@ -58,8 +60,9 @@ A: You should test each of possibilities you might expect to run
    the second test is expected to be better than the off-node latency
    in the first test due to lower contention for the NIC(s).
 
-Q: Does the latency test need to run across the whole system?  A:
-No, in fact, it is desirable to run the benchmark on a representative
+Q: Does the latency test need to run across the whole system?  
+
+A: No, in fact, it is desirable to run the benchmark on a representative
    subset of the system, since for the network latency test, the
    runtime is proportional to the number of communicating tasks,
    the number of cycles, and the number of messages.  When we say
@@ -70,6 +73,7 @@ No, in fact, it is desirable to run the benchmark on a representative
    found that running across 2-16 racks is sufficient.
 
 Q: How can I control the execution time?
+
 A: The execution time is proprotional to #tasks * #cycles * #messages
    (including the warmup messages).  So, you can keep the execution
    time roughly constant by keeping the product of these three
@@ -82,6 +86,7 @@ A: The execution time is proprotional to #tasks * #cycles * #messages
    the output histograms)
 
 Q: What do the output files represent?
+
 A: The output files contain three different representations of
    likelihood as a function of latency, ie. how likely am I to
    observe a particular latency value. The representations are
@@ -117,63 +122,66 @@ A: The output files contain three different representations of
 	higher values for the corresponding metrics. 
 
 Q: Within an output file, what are the columns?
-A: #bin --    The bin number in the histogram.
+
+A: - #bin --    The bin number in the histogram.
    (us) to (us) -- The min and max latency representing the edges
                    of this bin.
-   timer --   the number of occurances or CDF/PDF value for the timer.
+   - timer --   the number of occurances or CDF/PDF value for the timer.
               The benchmark measures and bins back-to-back timer calls
 	      so that the user may observe the contribution of the 
 	      timing calls to the measurements.
-   onNd-OS -- on-node-one-sided measurements. this is the number of
+   - onNd-OS -- on-node-one-sided measurements. this is the number of
               occurences or CDF/PDF value for the time taken by the
 	      communication function on one side of the communication
 	      for an on-node communication partner.
-   onNd-PW -- on-node-pairwise measurements. this is the number of
+   - onNd-PW -- on-node-pairwise measurements. this is the number of
               occurences or CDF/PDF value for the time take by the
 	      communication functions on both sides of the communication
 	      for an on-node communication, halved for comparison to
 	      the one-sided time.
-   onNd-OS-min -- the histogram/CDF/PDF representing the best one-
+   - onNd-OS-min -- the histogram/CDF/PDF representing the best one-
   	      sided latency for each block of on-node messages.
-   onNd-PW-min -- the histogram/CDF/PDF representing the best pairwise
+   - onNd-PW-min -- the histogram/CDF/PDF representing the best pairwise
   	      latency for each block of messages. This is the best
 	      estimate for the one-way latency, and graphing this value
 	      may show the "steps" present in the memory topology if
 	      they are significant.
-   offNd-OS -- on-node-one-sided measurements. this is the number of
+   - offNd-OS -- on-node-one-sided measurements. this is the number of
               occurences or CDF/PDF value for the time taken by the
 	      communication function on one side of the communication
 	      for an off-node communication partner.
-   offNd-PW -- on-node-pairwise measurements. this is the number of
+   - offNd-PW -- on-node-pairwise measurements. this is the number of
               occurences or CDF/PDF value for the time take by the
 	      communication functions on both sides of the communication
 	      for an off-node communication, halved for comparison to
 	      the one-sided time.
-   offNd-OS-min -- the histogram/CDF/PDF representing the best one-
+   - offNd-OS-min -- the histogram/CDF/PDF representing the best one-
   	      sided latency for each block of off-node messages.
-   offNd-PW-min -- the histogram/CDF/PDF representing the best pairwise
+   - offNd-PW-min -- the histogram/CDF/PDF representing the best pairwise
   	      latency for each block of messages. This is the best
 	      estimate for the one-way latency, and graphing this value
 	      may show the "steps" present in the network topology if
 	      they are significant.
 
 Q: What do I do with the CDF/PDF files?
+
 A: These files (and the histograms) are designed as input to GNUplot.
    Because of the statistical nature of the data and the large
    variations in scale for the target systems, log-log charts should
    be used (otherwise you just see a mode-spike). Some useful charts:
 
-   (1) The off node pairwise CDFs of machines 'A' and 'B' on one
+   1. The off node pairwise CDFs of machines 'A' and 'B' on one
        chart to compare latencies. 
-   (2) The off node pairwise and pairwise minimum CDFs for machine 'A'
+   2. The off node pairwise and pairwise minimum CDFs for machine 'A'
        on one chart to compare actual behavior to best case.
-   (3) The on/off node PDFs (OS or PW) to identify interruptions or
+   3. The on/off node PDFs (OS or PW) to identify interruptions or
        patterns in latency delays, and to visualise the 'tails' on the
        probability curves. (esp note this should be viewed log-log)
 
 Bit Error Test FAQs:
 
 Q: How do I test that the network is delivering bits without errors?
+
 A: The bit error test runs very similarly to the network latency
    test, walking through each possible pairing of communicating
    tasks several times (cycles). For each pair of tasks, the buffer
