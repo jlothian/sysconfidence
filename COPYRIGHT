@@ -1,0 +1,33 @@
+/*****************************************************************
+ *
+ * SYSTEMCONFIDENCE
+ *
+ * Copyright (c) 2008, 2009, 2010, 2011, 2012 UT-Battelle, LLC.
+ *
+ * All Rights Reserved. See the file 'LICENSE' for the
+ * License Agreement.
+ *
+ * Authors: Jeffery A. Kuehn, kuehn@ornl.gov
+ *          Josh Lothian,     lothian@ornl.gov
+ *          Jonathan Dobson,  dobsonjd@ornl.gov
+ *          Ross Glandon,     glandonsr@ornl.gov
+ *          Jacob Peek,       peekjt@ornl.gov
+ *
+ *          Extreme Scale Systems Center
+ *          Oak Ridge National Laboratory 
+ *          PO Box 2008 MS6164
+ *          Oak Ridge TN 37831-6164
+ *
+ * The authors also wishes to acknowledge and thank the following
+ * collaborators for our many conversations and their critiques,
+ * questions, and suggestions:
+ *
+ *         Stephen Poole
+ *         Stephen Hodson
+ *
+ * Oak Ridge National Laboratory is operated by UT-Battelle, LLC
+ * for the U.S. Department of Energy.
+ *
+ * This work was funded by the U.S. Department of Defense
+ *
+ ****************************************************************/
