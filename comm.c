@@ -217,7 +217,7 @@ uint64_t comm_getnodeid() {
 			*pn++ = *pp;
 	*pn = (char)0;
 	errno = 0;
-	id = strtoull(nid, NULL, 0);
+	id = strtoull(nid, NULL, 10);
 	ierr = errno;
 	if (ierr == ERANGE || ierr == EINVAL) {
 		perror("strtol");
