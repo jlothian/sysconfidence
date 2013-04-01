@@ -1,11 +1,15 @@
---- xdd/Makefile.orig	2012-03-05 11:20:39.939420000 -0500
-+++ xdd/Makefile	2012-03-05 11:20:19.944431000 -0500
-@@ -339,3 +339,8 @@
- # Make meta-directives
- #
- .PHONY: all doc fastinstall install tarball
-+
+--- xdd/Makefile.orig   2013-04-01 11:43:16.886958000 -0400
++++ xdd/Makefile        2013-04-01 11:42:58.357507000 -0400
+@@ -324,6 +324,11 @@
+ 
+ .PHONY: testclean depclean docclean libclean oclean clean distclean
+ 
 +print_includes:
-+	@echo $(INCLUDES)
++       @echo $(INCLUDES)
 +print_cppflags:
-+	@echo $(CPPFLAGS)
++       @echo $(CPPFLAGS)
++
+ #
+ # Include dependency makefiles if building source target
+ #
+
