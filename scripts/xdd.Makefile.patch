@@ -5,9 +5,9 @@
  .PHONY: testclean depclean docclean libclean oclean clean distclean
  
 +print_includes:
-+   @echo $(INCLUDES)
++	@echo $(INCLUDES)
 +print_cppflags:
-+   @echo $(CPPFLAGS)
++	@echo $(CPPFLAGS)
 +
  #
  # Include dependency makefiles if building source target
