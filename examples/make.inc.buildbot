@@ -10,10 +10,14 @@
 # 	XDD_TARGETS =
 # 	XDD_OBJS =
 # 	XDD_LIBS =
-USE_XDD = -DUSE_XDD $(shell scripts/get-xdd-flags.sh)
-XDD_TARGETS = read_xdd
-XDD_OBJS = io_test.o
-XDD_LIBS = libxdd.a
+#USE_XDD = -DUSE_XDD $(shell scripts/get-xdd-flags.sh)
+#XDD_TARGETS = read_xdd
+#XDD_OBJS = io_test.o
+#XDD_LIBS = libxdd.a
+USE_XDD = 
+XDD_TARGETS =
+XDD_OBJS =
+XDD_LIBS =
 
 # USE_SHMEM controls the replacement of MPI calls by SHMEM calls.
 # build with MPI ONLY:
